@@ -7,7 +7,7 @@ use tracing::{debug, info, instrument};
 
 #[instrument(skip(ctx, command))]
 pub async fn run(ctx: &serenity::all::Context, command: &CommandInteraction) -> Result<()> {
-    info!("Running `ping` command");
+    info!("Running command: 'ping'");
 
     let data = CreateInteractionResponseMessage::new().content("pong!");
     let builder = CreateInteractionResponse::Message(data);

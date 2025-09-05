@@ -16,7 +16,6 @@ serde_json = "1.0.143"
 serenity = { version = "0.12.4", features = ["full"] }
 songbird = { version = "0.5.0", features = ["builtin-queue"] }
 sqlx = { version = "0.8.6", features = ["runtime-tokio", "sqlite"] }
-symphonia = { version = "0.5.4", features = ["wav"] }
 thiserror = "2.0.16"
 tokio = { version = "1.47.1", features = ["full"] }
 tracing = "0.1.41"

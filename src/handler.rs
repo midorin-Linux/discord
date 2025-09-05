@@ -66,6 +66,7 @@ impl EventHandler for Handler {
 
         let commands = GuildId::new(self.guild_id)
             .set_commands(&ctx.http, vec![
+                commands::llm::register(),
                 commands::ping::register(),
             ]).await;
 
@@ -84,12 +85,15 @@ impl EventHandler for Handler {
             let options = command.data.options();
             let options_len = options.len();
 
-            info!("Received command: {:?}", command.data.name);
+            info!("Received command: '{}'", command.data.name);
             debug!(user_id = %command.user.id, channel_id = %command.channel_id, options_len, "Processing command interaction");
 
             if let Err(why) = match command.data.name.as_str() {
                 "ping" => {
                     commands::ping::run(&ctx, &command).await
+                },
+                "llm" => {
+                    commands::llm::run(&ctx, &command).await
                 },
                 _ => {
                     warn!("Unknown command: {}", command.data.name);
