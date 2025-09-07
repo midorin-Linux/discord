@@ -4,6 +4,9 @@ use serde::Deserialize;
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Config {
+    #[serde(rename = "AI_API_KEY")]
+    pub ai_api_key: String,
+
     #[serde(rename = "DATABASE_URL")]
     pub database_url: String,
 
