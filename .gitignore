@@ -1,3 +1,4 @@
 /target
 .env
 discord.db
+config.yaml

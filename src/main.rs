@@ -2,6 +2,7 @@ mod config;
 mod handler;
 mod commands;
 mod database;
+mod llm;
 
 use crate::config::Config;
 use crate::handler::Handler;

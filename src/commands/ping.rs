@@ -3,6 +3,7 @@ use serenity::{
     builder::{CreateCommand, CreateInteractionResponse, CreateInteractionResponseMessage},
     model::application::CommandInteraction,
 };
+use std::time::Instant;
 use tracing::{debug, info, instrument};
 
 #[instrument(skip(ctx, command))]
